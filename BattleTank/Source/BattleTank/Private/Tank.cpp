@@ -1,6 +1,7 @@
 // Copright Bob Player 2017
 
 #include "BattleTank.h"
+#include "TankAimingComponent.h"
 #include "Tank.h"
 
 
