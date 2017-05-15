@@ -8,6 +8,7 @@
 // Forward Declarations
 class UTankBarrel;
 class UTankTurret;
+class UTankTrack;
 class UTankAimingComponent;
 class AProjectile;
 
