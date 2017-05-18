@@ -10,7 +10,7 @@ UENUM()
 enum class EFiringState : uint8
 {
 	Reloading,
-	Aimimg,
+	Aiming,
 	Locked
 };
 
@@ -33,7 +33,7 @@ public:
 protected:
 
 	UPROPERTY(BlueprintReadOnly, Category = "State")
-	EFiringState FiringState = EFiringState::Reloading;
+	EFiringState FiringState = EFiringState::Aiming;
 
 private:
 	/// Sets default values for this component's properties
