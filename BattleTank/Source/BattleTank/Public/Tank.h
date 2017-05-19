@@ -1,4 +1,4 @@
-// Copright Bob Player 2017
+// Copright Bob Player 2017class UTankTurret;
 
 #pragma once
 
@@ -7,9 +7,7 @@
 
 // Forward Declarations
 class UTankBarrel;
-class UTankTurret;
 class UTankAimingComponent;
-class UTankMovementComponent;
 class AProjectile;
 
 UCLASS()
@@ -26,9 +24,6 @@ public:
 protected:
 	UPROPERTY(BlueprintReadOnly)
 	UTankAimingComponent* TankAimingComponent = nullptr;
-
-	UPROPERTY(BlueprintReadOnly)
-	UTankMovementComponent* TankMovementComponent = nullptr;
 
 private:
 
