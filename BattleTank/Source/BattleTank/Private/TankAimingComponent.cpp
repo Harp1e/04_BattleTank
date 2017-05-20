@@ -13,8 +13,6 @@ UTankAimingComponent::UTankAimingComponent()
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;	
-
-	// ...
 }
 
 void UTankAimingComponent::BeginPlay()
@@ -31,6 +29,8 @@ void UTankAimingComponent::Initialise(UTankBarrel*  BarrelToSet, UTankTurret* Tu
 
 void UTankAimingComponent::TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction)
 {
+//	Super:TickComponent(DeltaTime, TickType, ThisTickFunction);
+
 	if ((FPlatformTime::Seconds() - LastFireTime) < ReloadTimeInSeconds)
 	{
 		FiringState = EFiringState::Reloading;
@@ -78,13 +78,12 @@ void UTankAimingComponent::AimAt(FVector HitLocation)
 		AimDirection = OutLaunchVelocity.GetSafeNormal();
 		MoveBarrelTowards();
 	}
-	// No solution found
+	// No solution found - do nothing
 }
 
 void UTankAimingComponent::MoveBarrelTowards()
 {
-	if (!ensure(Barrel)) { return; }
-	if (!ensure(Turret)) { return; }
+	if (!ensure(Barrel) || !ensure(Turret)) { return; }
 
 	/// Work out difference between current barrel direction and aim direction
 	auto BarrelRotator = Barrel->GetForwardVector().Rotation();
